@@ -1,0 +1,144 @@
+.text-bold {
+  color: #333;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.only-bold {
+  line-height: 26px !important;
+}
+
+.contributor-page {
+  margin-top: 47px;
+  margin-bottom: 56px;
+
+  &__wrapper {
+    gap: 0px;
+  }
+
+  &__title {
+    color: #333;
+    font-family: $halvar;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 40px;
+    text-transform: uppercase;
+    hyphens: auto;
+  }
+
+  &__before-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    p {
+      color: #333;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  }
+
+  &__list {
+    list-style-type: decimal;
+  }
+
+  &__item {
+    margin-top: 30px;
+    margin-left: 30px;
+    counter-increment: start-counter;
+    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  &__subtitle {
+    color: #333;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+  }
+
+  &__sublist {
+    &.list-unmarked {
+      margin-left: -30px;
+      counter-reset: middle-counter-unmarked;
+      list-style: none;
+    }
+
+    &.list-marked {
+      counter-reset: middle-counter-marked;
+      list-style: none;
+
+      & .contributor-page__subitem {
+        counter-increment: middle-counter-marked;
+        margin-left: -30px;
+      }
+
+      & .contributor-page__subitem::before {
+          color: #333;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 30px;
+          content: counter(start-counter) "." counter(middle-counter-marked) ". ";
+      }
+    }
+  }
+
+  &__subitem {
+    margin-top: 30px;
+    color: #333;
+    counter-increment: middle-counter-unmarked;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+
+    // &::before {
+    //   color: #333;
+    //   font-size: 20px;
+    //   font-weight: 400;
+    //   line-height: 30px;
+    //   content: counter(start-counter) "." counter(middle-counter) ". ";
+    // }
+  }
+}
+
+.termins-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &__title {
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  &__item {
+    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  &__item--bold {
+    font-weight: 700;
+    line-height: 26px;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    margin-top: 30px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}

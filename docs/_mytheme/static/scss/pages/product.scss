@@ -1,0 +1,224 @@
+.product-hero {
+   margin-top: 25px;
+   margin-bottom: 64px;
+   &__wrapper {
+      display: flex;
+      gap: 40px;
+   }
+
+   &__card {
+      padding-top: 38px;
+      padding-bottom: 36px;
+      padding-left: 30px;
+      padding-right: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      border: 1px solid #035CE2;
+   }
+
+   &__title {
+      color: #035CE2;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 30px;
+      text-transform: uppercase;
+   }
+
+   &__subtitle {
+      color: #333;
+      font-size: 20px;
+      line-height: 30px;
+   }
+
+   &__description {
+      color: #333;
+      font-size: 20px;
+      line-height: 30px;
+      flex: 0 0 360px;
+   }
+   @media (max-width: 992px) {
+      &__wrapper {
+         flex-direction: column;
+         gap: 20px;
+      }
+      &__description {
+         flex: unset;
+      }
+      &__card {
+         padding: 40px;
+         padding-left: 20px;
+         padding-right: 30px;
+      }
+   }
+}
+.product-preferences {
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 32px;
+   }
+
+   &__pref {
+      min-height: 210px;
+      padding: 24px 32px 22px 32px;
+      border: 1px solid #dde5ed;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+   }
+
+   &__title {
+      color: #000;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+   }
+
+   &__description {
+      color: #858585;
+      font-size: 20px;
+      line-height: 30px;
+   }
+   @media (max-width: 992px) {
+      &__list {
+         margin-right: -70px;
+         margin-left: -70px;
+         padding-left: 70px;
+         padding-right: 70px;
+         display: flex;
+         column-gap: 10px;
+         overflow: auto;
+         -ms-overflow-style: none; /* IE и Edge */
+         scrollbar-width: none; /* Firefox */
+         &::-webkit-scrollbar {
+            display: none;
+         }
+      }
+      &__pref {
+         flex: 0 0 320px;
+      }
+   }
+   @media (max-width: 568px) {
+      &__list {
+         margin-right: -35px;
+         margin-left: -35px;
+         padding-left: 35px;
+         padding-right: 35px;
+      }
+   }
+}
+.product-why {
+   &__wrapper {
+      padding-top: 64px;
+      gap: 32px;
+   }
+
+   &__list {
+      display: flex;
+      gap: 40px;
+   }
+
+   &__item {
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      // gap: 20px;
+   }
+
+   &__sublist {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+   }
+
+   &__subitem {
+      display: flex;
+      gap: 20px;
+   }
+
+   &__icon {
+      height: 26px;
+      display: flex;
+      align-items: center;
+   }
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+   }
+   &__title {
+      color: #333;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+   }
+   &__descripiton {
+      color: #858585;
+      font-size: 20px;
+      line-height: 30px;
+      span {
+         color: #333;
+      }
+   }
+   @media (max-width: 992px) {
+      &__list {
+         flex-wrap: wrap;
+      }
+   }
+}
+.product-requirements {
+   &__wrapper {
+      gap: 32px;
+   }
+
+   &__subtitle {
+      margin-bottom: 20px;
+      color: #777;
+      font-family: Arial;
+      font-size: 20px;
+      line-height: 130%; /* 26px */
+   }
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 20px;
+      column-gap: 32px;
+   }
+
+   &__item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 40px;
+   }
+
+   &__label {
+      max-width: 90px;
+      color: #333;
+      font-size: 20px;
+      line-height: 30px;
+   }
+
+   &__content {
+      color: #777;
+      font-size: 20px;
+      p {
+         line-height: 30px;
+      }
+      span {
+         color: #333;
+      }
+   }
+   @media (max-width: 992px) {
+      &__list {
+         display: flex;
+         flex-direction: column;
+      }
+      &__item {
+         gap: 20px;
+      }
+   }
+}

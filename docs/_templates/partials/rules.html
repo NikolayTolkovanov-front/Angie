@@ -1,0 +1,42 @@
+<main class="main">
+  <div class="container">
+    {% include 'partials/breadcrumbs.html' %}
+    <section class="rules-page">
+      <div class="rules-page__wrapper section__wrapper">
+        <h1 class="rules-page__title">{{ meta.rulesTitle }}</h1>
+        <div class="rules-page__before-list">
+          {% for text in from_json(meta.rulesBeforeList) %}
+          <p>{{ text }}</p>
+          {% endfor %}
+        </div>
+
+        <ol class="rules-page__list">
+          {% for rule in from_json(meta.rulesPageList) %}
+
+          <li class="rules-page__item">
+            {{ rule.title }}
+            <ol class="rules-page__sublist">
+              {% for text in rule.texts %}
+              <li class="rules-page__subitem">
+                {{text}}
+              </li>
+              {% endfor %}
+
+            </ol>
+          </li>
+
+          {% endfor %}
+        </ol>
+
+        <ul class="copy">
+          <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsCompany}}</li>
+          <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsAddress}}</li>
+          <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsPhone}}</li>
+          <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsEmail}}</li>
+          <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsPublicationDate}}</li>
+        </ul>
+      </div>
+
+    </section>
+  </div>
+</main>

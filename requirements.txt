@@ -1,0 +1,7 @@
+Sphinx
+sphinx-notfound-page
+sphinxcontrib-sass
+sphinx-autobuild
+flask
+flask-cors
+beautifulsoup4

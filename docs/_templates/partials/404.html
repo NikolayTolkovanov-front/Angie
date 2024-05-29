@@ -1,0 +1,13 @@
+<main class="main-large">
+  <section class="error-page section">
+    <div class="container">
+      <div class="error-page__wrapper">
+        <h1 class="error-page__number">{{meta.Error404Number}}</h1>
+        <h2 class="error-page__title">{{meta.Error404Title}}</h2>
+        <p class="error-page__subtitle">{{meta.Error404SubTitle}}</p>
+
+        <a href="{{from_json(meta.Error404MainPage).link}}" class="error-page__link link-primary">{{from_json(meta.Error404MainPage).title}}</a>
+      </div>
+    </div>
+  </section>
+</main>

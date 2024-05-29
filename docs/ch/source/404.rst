@@ -1,0 +1,8 @@
+:langue: ch
+
+:Error404Number: 404
+:Error404Title: СТРАНИЦА НЕ НАЙДЕНА
+:Error404SubTitle: Неправильно набран адрес страницы или такой страницы не существует.
+:Error404MainPage: {"title": "Вернуться на главную", "link":"/ch/index.html"}
+
+.. title:: ANGIE Error 404

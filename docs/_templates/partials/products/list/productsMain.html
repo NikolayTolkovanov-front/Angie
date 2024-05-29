@@ -1,0 +1,20 @@
+<section class="products-main section">
+  <div class="products-main__wrapper">
+    <h1 class="products-main__title">{{ meta.productsMainTitle }}</h1>
+    <p class="products-main__text">{{ meta.productsMainText }}</p>
+    <ul class="products-main__list">
+      {% for product in meta.products %}
+        <li class="products-main__item">
+          <a class="products-item {% if product.colored == 'true' %}products-item_green{% endif %}" href="{{ product.link }}.html">
+            <h3 class="products-item__title">{{ product.title }}</h3>
+            <div class="products-item__text">
+              {% for item in from_json(product.productsItemTexts) %}
+                <p>{{ item.data }}</p>
+              {% endfor %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<main class="main">
+  <div class="container">
+    {% include 'partials/breadcrumbs.html' %}
+    <p id="news-data" style="display: none;">{{ to_json(meta.news) }}</p>
+    <section class="news-page">
+      <div class="news-page__wrapper section__wrapper">
+        <h1 class="news-page__title">{{ title }}</h1>
+        <div class="news-page__main">
+          <aside class="news-page__aside">
+            <ul class="news-page__nav">
+              <li>
+                <a href="#" class="news-page__link active">Все новости</a>
+              </li>
+              <li>
+                <a href="#" class="news-page__link">Компания</a>
+              </li>
+              <li>
+                <a href="#" class="news-page__link">Исследования</a>
+              </li>
+              <li>
+                <a href="#" class="news-page__link">Обучение</a>
+              </li>
+            </ul>
+          </aside>
+          <div class="news-page__content" id="news-page-content">
+            <!-- pagination -->
+            <div class="data-container"></div>
+            <div id="pagination-news"></div>
+             <!-- /pagination -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

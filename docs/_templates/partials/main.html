@@ -1,0 +1,87 @@
+<main class="main-large">
+  <section class="home-hero section">
+    <div class="container">
+      <div class="home-hero__wrapper">
+        <div class="home-hero__company">
+          <h1 class="home-hero__title">{{ title }}</h1>
+          <p class="home-hero__text">{{ meta.homeHeroText }}</p>
+        </div>
+        <div class="home-news">
+          <div class="home-news__title section__title">
+            {{ meta.homeNewsTitle }}
+          </div>
+          <ul class="home-news__list">
+            {% for item in from_json(generate_context_meta(meta.langue, "index", "/company/news/").articleAsideList) %}
+            <li>
+              <a href="{{item.link}}" class="news-item">
+                <h2 class="news-item__title">{{item.title}}</h2>
+                <p class="news-item__subtitle">{{item.subTitle}}</p>
+                <div class="news-item__footer">
+                  <span class="news-item__date">{{item.date}}</span>
+                  <div class="news-item__arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+                      <path d="m10.196.5 4.412 3.75m0 0L10.196 8m4.412-3.75H1" stroke="#777" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home-why section">
+    <div class="container">
+      <div class="home-why__wrapper section__wrapper">
+        <h2 class="home-why__title section__title">{{ meta.homeWhyTitle }}</h2>
+        <ul class="home-why__list">
+          {% for item in from_json(meta.homeWhyItems) %}
+          <li class="home-why__item">
+            <h3 class="home-why__subtitle">{{ item.title }}</h3>
+            <p class="home-why__text">{{ item.subtitle }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="home-list section partners">
+    <div class="container">
+      <div class="home-list__wrapper section__wrapper">
+        <h2 class="home-list__title section__title">
+          {{ from_json(meta.partnersList).title }}
+        </h2>
+        <ul class="home-list__items">
+          {% for image in from_json(meta.partnersList).images %}
+          <li>
+            <a href="{{ image.link }}">
+              <img src="_static/img/home/{{ image.imgName }}" alt="{{ image.alt }}" />
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="home-list section clients">
+    <div class="container">
+      <div class="home-list__wrapper section__wrapper">
+        <h2 class="home-list__title section__title">
+          {{ from_json(meta.clientsList).title }}
+        </h2>
+        <ul class="home-list__items">
+          {% for image in from_json(meta.clientsList).images %}
+          <li>
+            <a href="{{ image.link }}">
+              <img src="_static/img/home/{{ image.imgName }}" alt="{{ image.alt }}" />
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>

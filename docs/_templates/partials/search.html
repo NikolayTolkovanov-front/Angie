@@ -1,0 +1,18 @@
+<main class="main">
+   <div class="container">
+      {% include 'partials/breadcrumbs.html' %}
+      <section class="search-page section">
+         <div class="search-page__wrapper section__wrapper">
+            <h1 class="search-page__title">{{meta.searchTitle}}</h1>
+            <div class="search-page__input">
+               <input autofocus type="text" class="search-main__input" placeholder="Поиск">
+               <button class="search-main__button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.525.033A5.492 5.492 0 1 0 8.922 9.84l2.969 2.969a.65.65 0 1 0 .919-.92L9.84 8.923A5.492 5.492 0 0 0 5.525.032ZM1.268 5.525a4.258 4.258 0 1 1 8.515 0 4.258 4.258 0 0 1-8.515 0Z" fill="#777"/></svg>
+               </button>
+            </div>
+            <ul class="search-page__list"></ul>
+            <span class="search-page__error hidden">{{generate_context_meta(meta.langue, "search").searchNotFound}}</span>
+         </div>
+      </section>
+   </div>
+</main>

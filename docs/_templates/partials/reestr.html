@@ -1,0 +1,19 @@
+<main class="main">
+  <div class="container">
+    {% include 'partials/breadcrumbs.html' %}
+    <section class="reestr-page section">
+      <div class="reestr-page__wrapper section__wrapper">
+        <h1 class="reestr-page__title">{{meta.reestrTitle}}</h1>
+        <ul class="reestr-page__list">
+          {% for item in from_json(meta.reestrPageList) %}
+          <li>
+            <a href={{item.link}} class="link-primary">{{item.text}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        <p class="reestr-page__text">{{meta.reestrContactUs}}<a href="mailto:{{generate_context_meta(meta.langue, 'contacts').contactsInfoEmail}}"
+            class="link-primary" style="display: inline-block">{{generate_context_meta(meta.langue, 'contacts').contactsInfoEmail}}</a></p>
+      </div>
+    </section>
+  </div>
+</main>

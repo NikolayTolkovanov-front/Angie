@@ -1,0 +1,26 @@
+.description-page {
+  margin-top: 47px;
+  &__wrapper {
+    gap: 32px;
+  }
+
+  &__title {
+    font-family: $halvar;
+    color: #333;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    & > li {
+      color: #333;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  }
+}

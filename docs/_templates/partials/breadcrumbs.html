@@ -1,0 +1,10 @@
+<section class="breadcrumbs">
+   <ul class="breadcrumbs__list">
+    {% for item in from_json(meta.breadcrumbsList) %}
+    <li>
+       <a href="{{item.link}}" class="breadcrumbs__link">{{item.title}}</a>
+    </li>
+    {% endfor %}
+
+   </ul>
+</section>

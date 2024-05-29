@@ -1,0 +1,46 @@
+.documents-page {
+   margin-top: 48px;
+   &__wrapper {
+      gap: 32px;
+   }
+   &__title {
+      color: #333;
+      font-family: $halvar;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 40px;
+      text-transform: uppercase;
+      hyphens: auto;
+   }
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+         font-size: 20px;
+         line-height: 30px;
+      }
+      li > ol {
+         margin-top: 20px;
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         li {
+            list-style-type: auto;
+            list-style-position: inside;
+         }
+      }
+   }
+
+   // &__text {
+   //    color: #333;
+   //    font-size: 20px;
+   //    line-height: 20px;
+   // }
+   @media (max-width: 390px) {
+      &__title {
+         font-size: calc(40 / 390 * 100vw);
+      }
+   }
+}

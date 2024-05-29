@@ -1,0 +1,37 @@
+<section class="product-requirements section">
+  <div class="product-requirements__wrapper section__wrapper">
+    <h2 class="product-requirements__title section__title">
+      {{ meta.productRequirementsTitle }}
+    </h2>
+    <div class="product-requirements__main">
+      <h2 class="product-requirements__subtitle">
+        {{ meta.productRequirementsSubtitle }}
+      </h2>
+        <ul class="product-requirements__list">
+          {% for item in from_json(meta.productRequirementsLists) %}
+          <li class="product-requirements__item">
+            <div class="product-requirements__label">
+              {{ item.system }}
+            </div>
+            <div class="product-requirements__content">
+              <p>
+                {{ meta.productRequirementsVersionTag }}
+                <span>
+                  {% for version in item.versions %} {{ version }}{% if
+                  loop.last == False %},{% endif %} {% endfor %}
+                </span>
+              </p>
+              <p>
+                {{ meta.productRequirementsArchitectureTag }}
+                <span>
+                  {% for arch in item.architectures %} {{ arch }}{% if
+                  loop.last == False %},{% endif %} {% endfor %}
+                </span>
+              </p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<main class="main">
+  <div class="container">
+    {% include 'partials/breadcrumbs.html' %}
+    <section class="lisence-page section">
+      <div class="lisence-page__wrapper section__wrapper">
+        <h1 class="lisence-page__title">{{meta.licenseTitle}}</h1>
+        <ul class="lisence-page__list documents-page__text">
+          {% for item in from_json(meta.licenseCopyrights) %}
+          <li>Copyright (C) {{item.from_to}} {{item.who}}</li>
+          {% endfor %}
+
+          <li>{{meta.licenseRightsReservedText}}</li>
+          <li>
+            <p>{{meta.licenseDistAndUseText}}</p>
+            <ol>
+              {% for rule in from_json(meta.licenseCopyrightsRules) %}
+              <li>{{rule}}</li>
+              {% endfor %}
+            </ol>
+          </li>
+          <li>
+            <p>{{meta.licenseLiabilityText}}</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>

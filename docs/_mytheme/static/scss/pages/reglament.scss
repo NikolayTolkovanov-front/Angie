@@ -1,0 +1,18 @@
+.reglament-page {
+  margin-top: 47px;
+  margin-bottom: 56px;
+
+  &__wrapper {
+    gap: 0px;
+  }
+
+  &__title {
+    color: #333;
+    font-family: $halvar;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 40px;
+    text-transform: uppercase;
+    hyphens: auto;
+  }
+}

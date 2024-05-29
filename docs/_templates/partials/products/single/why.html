@@ -1,0 +1,32 @@
+<section class="product-why section">
+  <div class="product-why__wrapper section__wrapper">
+    <h2 class="section__title">{{ meta.productWhyTitle }}</h2>
+    <ul class="product-why__list">
+      {% for list in from_json(meta.productWhyLists) %}
+      <li class="product-why__item">
+        <ul class="product-why__sublist">
+          {% for item in list %}
+          <li class="product-why__subitem">
+            <div class="product-why__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="7"
+                viewBox="0 0 27 7"
+                fill="none"
+              >
+                <path d="M0 4H25M25 4L20 1M25 4L20 6.5" stroke="#777777" />
+              </svg>
+            </div>
+            <div class="product-why__content">
+              <div class="product-why__title">{{ item.title }}</div>
+              <p class="product-why__descripiton">{{ item.description }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

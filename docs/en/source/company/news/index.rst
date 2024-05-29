@@ -1,0 +1,18 @@
+:langue: en
+:breadcrumbsList: [{ "title": "Главная", "link": "/en/" },{"title": "Компания","link": "/en/company"},{"title": "Новости","link": "/en/news"},{"title": "Все новости","link": "/en/news"}]
+
+:articleAsideList: [{"title": "Тест123", "subTitle": "Тест123", "date": "10.11.2023", "link": "/ru/company/news/new1.html"}]
+:articleAsideTitle: ДРУГИЕ НОВОСТИ
+
+.. title:: НОВОСТИ
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   new1
+   new2
+   new3
+   new4
+   new5
+   new6

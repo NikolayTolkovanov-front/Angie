@@ -1,0 +1,13 @@
+<main class="main-large">
+  <div class="container">
+    <section class="error-page section">
+      <div class="error-page__wrapper">
+        <h1 class="error-page__number">{{meta.Error500Number}}</h1>
+        <h2 class="error-page__title">{{meta.Error500Title}}</h2>
+        <p class="error-page__subtitle">{{meta.Error500SubTitle}}</p>
+
+        <a href="{{from_json(meta.Error500MainPage).link}}" class="error-page__link link-primary">{{from_json(meta.Error500MainPage).title}}</a>
+      </div>
+    </section>
+  </div>
+</main>

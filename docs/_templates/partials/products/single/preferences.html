@@ -1,0 +1,10 @@
+<section class="product-preferences">
+  <ul class="product-preferences__list">
+    {% for preference in from_json(meta.productHeroPreferences) %}
+    <li class="product-preferences__pref">
+      <span class="product-preferences__title">{{ preference.title }}</span>
+      <p class="product-preferences__description">{{ preference.subtitle }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

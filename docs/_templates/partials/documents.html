@@ -1,0 +1,17 @@
+<main class="main">
+   <div class="container">
+      {% include 'partials/breadcrumbs.html' %}
+      <section class="documents-page section">
+         <div class="documents-page__wrapper section__wrapper">
+            <h1 class="documents-page__title">ПРАВОВЫЕ ДОКУМЕНТЫ</h1>
+            <ul class="documents-page__list">
+               {% for item in from_json(meta.documentsPageList) %}
+               <li>
+                  <a href="{{item.link}}" class="link-primary">{{item.title}}</a>
+               </li>
+               {% endfor %}
+            </ul>
+         </div>
+      </section>
+   </div>
+</main>

@@ -1,0 +1,41 @@
+{% set pathToWebpImage = "/%s/_static/img/%s.webp"|format(meta.langue, meta.articleImageName) %}
+{% set pathToPngImage = "/%s/_static/img/%s.png"|format(meta.langue, meta.articleImageName) %}
+
+<div class="article__content section">
+   <span class="article__date">{{ date_format(meta.date) }}</span>
+   <h1 class="article__title section__title" id="singe-new-title-id">{{ title }}</h1>
+   <div class="article__main">
+
+      {% if meta.articleImageName %}
+      <div class="article__image">
+         <picture>
+            <source srcset="{{pathToWebpImage}}" type="image/webp">
+            <img src="{{ pathToPngImage }}" alt="">
+         </picture>
+      </div>
+      {% endif %}
+
+      <div class="article__text">
+         {% for item in from_json(meta.textContent) %}
+         <p>
+            {{ item.data }}
+         </p>
+         {% endfor %}
+      </div>
+   </div>
+   <div class="article-footer">
+      <div class="article-footer__date">{{ meta.articleFooterDateText }} {{ date_format(meta.articleFooterDate) }}</div>
+      <div class="news-card__labels">
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+               d="m18.788 10.846-7.76-7.76a.931.931 0 0 0-.662-.273H3.125a.313.313 0 0 0-.313.312v7.241a.932.932 0 0 0 .275.663l7.76 7.76a.937.937 0 0 0 1.327 0l6.617-6.617a.937.937 0 0 0 0-1.328l-.003.002Zm-.442.884-6.616 6.616a.313.313 0 0 1-.442 0l-7.76-7.76a.312.312 0 0 1-.09-.22V3.438h6.928c.083 0 .162.033.22.09l7.76 7.76a.313.313 0 0 1 0 .442ZM7.187 6.562a.625.625 0 1 1-1.25 0 .625.625 0 0 1 1.25 0Z"
+               fill="#C3BEBE" />
+         </svg>
+         <ul>
+            {% for tag in meta.tags.split(', ') %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+         </ul>
+      </div>
+   </div>
+</div>

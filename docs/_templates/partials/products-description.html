@@ -1,0 +1,17 @@
+<main class="main">
+   <div class="container">
+      {% include 'partials/breadcrumbs.html' %}
+      <section class="description-page section">
+         <div class="description-page__wrapper section__wrapper">
+            <h1 class="description-page__title">{{meta.DOSTitle}}</h1>
+            <ul class="description-page__list description-page__text">
+
+               {% for text in from_json(meta.DOSPageList) %}
+               <li>{{text}}</li>
+               {% endfor %}
+
+            </ul>
+         </div>
+      </section>
+   </div>
+</main>

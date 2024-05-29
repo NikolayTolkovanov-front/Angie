@@ -1,0 +1,57 @@
+{% extends "_mytheme/layout.html" %}
+{% block header %}
+  {% include 'partials/header.html' %}
+{% endblock %}
+
+{% block content %}
+  {% if pagename == 'index' %}
+    {% include 'partials/main.html' %}
+
+  {% elif pagename == 'company/news/index' %}
+    {% include 'partials/news/news.html' %}
+  {% elif 'company/news/' in pagename %}
+    {% include 'partials/news/singleNew.html' %}
+
+  {% elif pagename == 'products/index' %}
+    {% include 'partials/products/products.html' %}
+  {% elif 'products/' in pagename %}
+    {% include 'partials/products/singleProduct.html' %}
+
+  {% elif pagename == 'search/index' %}
+    {% include 'partials/search.html' %}
+
+  {% elif pagename == '404' %}
+    {% include 'partials/404.html' %}
+  {% elif pagename == '500' %}
+    {% include 'partials/500.html' %}
+
+  {% elif pagename == 'legal/index' %}
+    {% include 'partials/documents.html' %}
+  {% elif pagename == 'legal/rules' %}
+    {% include 'partials/rules.html' %}
+  {% elif pagename == 'legal/products-description' %}
+    {% include 'partials/products-description.html' %}
+  {% elif pagename == 'legal/reestr' %}
+    {% include 'partials/reestr.html' %}
+  {% elif pagename == 'legal/lisence' %}
+    {% include 'partials/lisence.html' %}
+  {% elif pagename == 'legal/notification' %}
+    {% include 'partials/notification.html' %}
+  {% elif pagename == 'legal/contributor' %}
+    {% include 'partials/contributor.html' %}
+
+  {% elif pagename == 'docs/index' %}
+    {% include 'partials/docs/docs.html' %}
+
+  {% elif pagename == 'support/ts' %}
+    {% include 'partials/reglament.html' %}
+  {% elif pagename == 'support/ps' %}
+    {% include 'partials/reglament.html' %}
+
+  {% endif %}
+  {% block body %}{% endblock %}
+{% endblock %}
+
+{% block footer %}
+  {% include 'partials/footer.html' %}
+{% endblock %}

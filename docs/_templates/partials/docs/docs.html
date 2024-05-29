@@ -1,0 +1,16 @@
+<main class="main">
+  <div class="container">
+    {% include 'partials/breadcrumbs.html' %}
+    <section class="docs-page section">
+      <div class="docs-page__wrapper section__wrapper">
+        <h1 class="news-page__title">{{ title }}</h1>
+        {% include 'components/notifications/note.html' %}
+        {% include 'components/notifications/warning.html' %}
+        {% include 'components/notifications/info.html' %}
+        {% include 'components/notifications/hint.html' %}
+        {% include 'components/background/text.html' %}
+        {% include 'components/background/code.html' %}
+      </div>
+    </section>
+  </div>
+</main>

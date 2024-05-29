@@ -1,0 +1,41 @@
+<main class="main">
+  <div class="container">
+    {% include 'partials/breadcrumbs.html' %}
+
+    <section class="contributor-page section">
+      <div class="contributor-page__wrapper section__wrapper">
+        <h1 class="contributor-page__title">{{meta.contributorTitle}}</h1>
+        <div class="contributor-page__before-list">
+          <p>{{meta.contributorSubTitle}}</p>
+        </div>
+      </div>
+      <ul class="termins-list">
+        <p class="termins-list__title">{{meta.contributorTerminTitle}}</p>
+        {% for termin in from_json(meta.contributorTermins) %}
+        <li class="termins-list__item">{{termin}}</li>
+        {% endfor %}
+      </ul>
+      <ol class="contributor-page__list">
+        {% for item in from_json(meta.contributorPageList) %}
+        <li class="contributor-page__item">
+          <span class="text-bold">{{item.boldText}}</span>
+          <span class="text">{{item.normalText}}</span>
+          <ul class="contributor-page__sublist list-unmarked">
+            {% for sub_item in item.subList %}
+            <li class="contributor-page__subitem">{{sub_item}}</li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ol>
+
+      <ul class="copy">
+        <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsCompany}}</li>
+        <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsAddress}}</li>
+        <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsPhone}}</li>
+        <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsEmail}}</li>
+        <li class="copy__item">{{generate_context_meta(meta.langue, 'contacts').contactsPublicationDate}}</li>
+      </ul>
+    </section>
+  </div>
+</main>

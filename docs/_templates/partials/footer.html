@@ -1,0 +1,42 @@
+<footer class="footer">
+   <div class="container">
+      <div class="footer__wrapper">
+
+         {% for item in from_json(generate_context_meta(meta.langue, 'footer').footerList) %}
+         <div class="footer__item">
+            <h2 class="footer__subtitle">{{item.title}}</h2>
+            <ul class="footer__list">
+               {% for sub_item in item.list %}
+                  <li>
+                     {% if sub_item.type == 'phone' %}
+                        <a href="tel:{{generate_context_meta(meta.langue, 'contacts')[sub_item.value]}}">
+                           {{generate_context_meta(meta.langue, 'contacts')[sub_item.value]}}
+                        </a>
+                     {% elif sub_item.type == 'email' %}
+                        <a href="mailto:{{generate_context_meta(meta.langue, 'contacts')[sub_item.value]}}">
+                           {{generate_context_meta(meta.langue, 'contacts')[sub_item.value]}}
+                        </a>
+                     {% elif sub_item.type == 'qrlink' %}
+                        <a href="{{sub_item.value}}" class="footer__sublink">
+                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m16.5 2.496-2.373 12.921s-.332.896-1.244.466L7.41 11.35l-.026-.013c.74-.717 6.474-6.287 6.725-6.54.388-.39.147-.623-.304-.328l-8.47 5.81-3.267-1.187s-.515-.197-.564-.627c-.05-.43.58-.663.58-.663l13.322-5.645s1.095-.52 1.095.34Z" fill="#777"/></svg>
+                           <span>{{sub_item.name}}</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M0 4.038V0h4.038v1H1v3.038H0ZM0 18v-4.038h1V17h3.038v1H0Zm13.962 0v-1H17v-3.038h1V18h-4.038ZM17 4.038V1h-3.038V0H18v4.038h-1Zm-3.058 9.904h1.212v1.212h-1.212v-1.212Zm0-2.423h1.212v1.212h-1.212v-1.212Zm-1.211 1.212h1.211v1.211h-1.211v-1.211Zm-1.212 1.211h1.212v1.212h-1.212v-1.212Zm-1.211-1.211h1.211v1.211h-1.211v-1.211Zm2.423-2.423h1.211v1.211h-1.211v-1.211Zm-1.212 1.211h1.212v1.212h-1.212v-1.212Zm-1.211-1.211h1.211v1.211h-1.211v-1.211Zm4.846-7.462v4.846h-4.846V2.846h4.846Zm-7.462 7.462v4.846H2.846v-4.846h4.846Zm0-7.462v4.846H2.846V2.846h4.846ZM6.808 14.27v-3.077H3.73v3.077h3.078Zm0-7.461V3.73H3.73v3.077l3.078.002Zm7.461 0V3.73h-3.077v3.077l3.077.002Z" fill="#777"/></svg>
+                        </a>
+                     {% elif sub_item.type == 'text' %}
+                        <p>{{generate_context_meta(meta.langue, 'contacts')[sub_item.name]}}: {{generate_context_meta(meta.langue, 'contacts')[sub_item.value]}}</p>
+                     {% else %}
+
+                        <a href="{{sub_item.value}}" class="footer__link">{{sub_item.title}}</a>
+
+                     {% endif %}
+                  </li>
+               {% endfor %}
+            </ul>
+         </div>
+         {% endfor %}
+
+
+
+      </div>
+   </div>
+</footer>

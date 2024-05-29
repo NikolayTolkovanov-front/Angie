@@ -1,0 +1,55 @@
+<section class="products-compare section">
+  <div class="products-compare__wrapper section__wrapper">
+    <h2 class="products-compare__title section__title">
+      {{ meta.productsCompareTitle }}
+    </h2>
+    <div class="table-product">
+      <table>
+        <tr>
+          {% for name in from_json(meta.tableColumnsNames) %}
+            <th>{{ name }}</th>
+          {% endfor %}
+        </tr>
+        {% for row in from_json(meta.tableContent) %}
+          <tr>
+            {% for item in row %}
+              <td>
+
+                {% if item == 'true' %}
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M9.00002 16.2001L4.80002 12.0001L3.40002 13.4001L9.00002 19.0001L21 7.0001L19.6 5.6001L9.00002 16.2001Z"
+                  fill="#4C89FF"
+                />
+              </svg>
+                {% elif item == 'false' %}
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M18.36 19.7802L12 13.4102L5.63997 19.7802L4.21997 18.3602L10.59 12.0002L4.21997 5.64021L5.63997 4.22021L12 10.5902L18.36 4.23022L19.77 5.64021L13.41 12.0002L19.77 18.3602L18.36 19.7802Z"
+                  fill="#777777"
+                />
+              </svg>
+                {% else %}
+                  {{item}}
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</section>
+

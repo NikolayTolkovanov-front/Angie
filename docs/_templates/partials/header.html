@@ -1,0 +1,208 @@
+<header class="header">
+  <div class="container">
+    <div class="backdrop"></div>
+    <div class="header__wrapper">
+      <div class="header__row">
+        <a class="header__logo" href="{{generate_context_meta(meta.langue, 'header').headerMainPage}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="141" height="37" viewBox="0 0 141 37" fill="none">
+            <g clip-path="url(#a)">
+              <path d="M140.26 0H0v36.096h140.26V0Z" fill="#000" />
+              <path
+                d="M59.853 5.518v25.06h-6.955l-.067-.077-12.039-14.095v14.173h-7.023V5.518h6.96l.063.073 12.039 14.095V5.518h7.022ZM32.19 30.578h-7.64l-1.695-3.957H11.58L9.885 30.58h-7.64L12.992 5.498h8.45l10.747 25.08ZM20.06 20.1l-2.842-6.631-2.844 6.631h5.686Zm85.925-14.582h-7.023v25.06h7.023V5.519Zm28.72 6.521V5.518H111.54v25.043h23.165v-6.52h-16.142v-2.742h16.142v-6.521h-16.142v-2.739h16.142Zm-59.816 4.284v5.65h11.874v.725c-1.756.994-4.34 1.49-7.75 1.49-2.827 0-4.914-.484-6.26-1.45-1.35-.968-2.025-2.455-2.025-4.466v-.382c0-4.02 2.762-6.032 8.285-6.032 1.246 0 2.418.108 3.511.324 1.094.216 1.977.49 2.634.84.995.532 1.397 1.242 1.397 1.242h7.421v-.116c0-1.883-.617-3.511-1.85-4.885-1.235-1.375-3.006-2.426-5.308-3.15-2.302-.725-5.034-1.09-8.189-1.09-3.155 0-5.917.535-8.284 1.604-2.368 1.068-4.199 2.575-5.498 4.524-1.3 1.949-1.946 4.219-1.946 6.815v.19c0 2.621.65 4.899 1.946 6.832 1.3 1.934 3.155 3.431 5.573 4.487 2.418 1.056 5.242 1.585 8.475 1.585 1.78 0 3.308-.153 4.582-.459a11.798 11.798 0 0 0 3.59-1.527l.152 1.49h6.795V16.325H74.887l.002-.002Z"
+                fill="#fff" />
+            </g>
+            <defs>
+              <clipPath id="a">
+                <path fill="#fff" d="M0 0h140.26v36.096H0z" />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+
+        <ul class="header__links">
+          {% for item in from_json(generate_context_meta(meta.langue, 'header').headerRowList) %}
+          <li class="header-sub header__item">
+            <span>{{item.title}}</span>
+            <svg class="header-sub__icon" width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M.486.646A.533.533 0 0 1 1.24.602l2.646 2.351L6.53.602a.533.533 0 0 1 .708.797l-3 2.666a.533.533 0 0 1-.708 0L.53 1.4A.533.533 0 0 1 .486.646Z" />
+            </svg>
+
+            <div class="header-sub__spoiler collapse">
+              <ul class="header-sub__list">
+                {% for sub_item in item.subList %}
+                <li>
+                  <a href="{{sub_item.subLink}}" class="underline">{{sub_item.subTitle}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="header__media header-sub">
+          <svg class="header__media-icon--social" width="16" height="14" viewBox="0 0 16 14"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m15.385.496-2.373 12.921s-.332.896-1.244.466L6.294 9.35l-.026-.013c.74-.717 6.474-6.287 6.724-6.54.388-.39.148-.623-.303-.328l-8.47 5.81L.951 7.092s-.514-.197-.563-.627c-.05-.43.58-.663.58-.663L14.29.156s1.095-.52 1.095.34Z" />
+          </svg>
+          <svg class="header-sub__icon" width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M.486.646A.533.533 0 0 1 1.24.602l2.646 2.351L6.53.602a.533.533 0 0 1 .708.797l-3 2.666a.533.533 0 0 1-.708 0L.53 1.4A.533.533 0 0 1 .486.646Z" />
+          </svg>
+          <div class="header-sub__spoiler collapse">
+            <ul class="header-sub__list">
+              {% for item in from_json(generate_context_meta(meta.langue, 'header').headerMediaList) %}
+              <li>
+                <a href="{{item.link}}">
+                  <span class="underline">{{item.title}}</span>
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M.885 4.038V0h4.038v1H1.885v3.038h-1ZM.885 18v-4.038h1V17h3.038v1H.885Zm13.962 0v-1h3.038v-3.038h1V18h-4.038Zm3.038-13.962V1h-3.038V0h4.038v4.038h-1Zm-3.058 9.904h1.212v1.212h-1.212v-1.212Zm0-2.423h1.212v1.212h-1.212v-1.212Zm-1.211 1.212h1.21v1.211h-1.21v-1.211Zm-1.212 1.211h1.212v1.212h-1.212v-1.212Zm-1.211-1.211h1.21v1.211h-1.21v-1.211Zm2.423-2.423h1.21v1.211h-1.21v-1.211Zm-1.212 1.211h1.212v1.212h-1.212v-1.212Zm-1.211-1.211h1.21v1.211h-1.21v-1.211Zm4.846-7.462v4.846h-4.846V2.846h4.846Zm-7.462 7.462v4.846H3.73v-4.846h4.846Zm0-7.462v4.846H3.73V2.846h4.846ZM7.693 14.27v-3.077H4.615v3.077h3.078Zm0-7.461V3.73H4.615v3.077l3.078.002Zm7.46 0V3.73h-3.076v3.077l3.077.002Z"
+                      fill="#777" />
+                  </svg>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="header__search">
+          <input type="text" class="header__search-input" placeholder="Введите запрос" />
+          <button class="header__search-button" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.525.033A5.492 5.492 0 1 0 8.922 9.84l2.969 2.969a.65.65 0 1 0 .919-.92L9.84 8.923A5.492 5.492 0 0 0 5.525.032ZM1.268 5.525a4.258 4.258 0 1 1 8.515 0 4.258 4.258 0 0 1-8.515 0Z"
+                fill="#777" />
+            </svg>
+          </button>
+        </div>
+        <ul class="header__langs">
+          {% for item in from_json(generate_context_meta(meta.langue, 'header').headerLanguages) %}
+          <li class="header__lang header__lang_{{item.langue}}">
+            <a href="{{item.link}}">
+              {{item.text}}
+            </a>
+          </li>
+          {% endfor %}
+
+        </ul>
+        <a class="header__profile" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M10 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM7 6a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm-1.991 5A2 2 0 0 0 3 13c0 1.691.833 2.966 2.135 3.797C6.417 17.614 8.145 18 10 18c1.855 0 3.583-.386 4.865-1.203C16.167 15.967 17 14.69 17 13a2 2 0 0 0-2-2H5.009ZM4 13c0-.553.448-1 1.009-1H15a1 1 0 0 1 1 1c0 1.309-.622 2.284-1.673 2.953C13.257 16.636 11.735 17 10 17c-1.735 0-3.257-.364-4.327-1.047C4.623 15.283 4 14.31 4 13Z"
+              fill="#777" />
+          </svg>
+        </a>
+        <button class="header__burger">
+          <div class="header__burger_inner">
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="header-menu__close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M14.331.206a.676.676 0 0 1 .97.942L8.697 7.942l6.718 6.91a.676.676 0 1 1-.97.943L7.755 8.912l-6.593 6.782a.676.676 0 0 1-.97-.943l6.62-6.81-6.505-6.69a.676.676 0 1 1 .97-.944l6.478 6.665L14.331.206Z"
+            fill="#777" />
+        </svg>
+      </div>
+      <div class="header__row">
+        <div class="header-menu__buttons">
+          <a class="search" href="#">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.525.032a5.492 5.492 0 1 0 3.397 9.809l2.968 2.968a.65.65 0 1 0 .92-.919L9.84 8.922A5.492 5.492 0 0 0 5.525.032ZM1.267 5.525a4.257 4.257 0 1 1 8.515 0 4.257 4.257 0 0 1-8.515 0Z"
+                fill="#777" />
+            </svg>
+          </a>
+          <ul class="header__langs">
+            {% for item in from_json(generate_context_meta(meta.langue, 'header').headerLanguages) %}
+
+            <li class="header__lang header__lang_{{item.langue}}">
+              <a href="{{item.link}}">{{item.text}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          <a class="header__profile" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M10 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM7 6a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm-1.991 5A2 2 0 0 0 3 13c0 1.691.833 2.966 2.135 3.797C6.417 17.614 8.145 18 10 18c1.855 0 3.583-.386 4.865-1.203C16.167 15.967 17 14.69 17 13a2 2 0 0 0-2-2H5.009ZM4 13c0-.553.448-1 1.009-1H15a1 1 0 0 1 1 1c0 1.309-.622 2.284-1.673 2.953C13.257 16.636 11.735 17 10 17c-1.735 0-3.257-.364-4.327-1.047C4.623 15.283 4 14.31 4 13Z"
+                fill="#777" />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="header__links">
+          {% for item in from_json(generate_context_meta(meta.langue, 'header').headerRowList) %}
+          <li class="header-sub header__item">
+            <span>{{item.title}}</span>
+            <svg class="header-sub__icon" width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.486283 0.645809C0.681973 0.425658 1.01908 0.405828 1.23923 0.601518L3.8849 2.95323L6.53057 0.601518C6.75072 0.405828 7.08783 0.425658 7.28352 0.645809C7.47921 0.865959 7.45938 1.20306 7.23923 1.39875L4.23923 4.06542C4.03716 4.24504 3.73265 4.24504 3.53057 4.06542L0.530574 1.39875C0.310423 1.20306 0.290594 0.865959 0.486283 0.645809Z" />
+            </svg>
+
+            <div class="header-sub__spoiler collapse">
+              <ul class="header-sub__list">
+                {% for sub_item in item.subList %}
+                <li>
+                  <a href="{{sub_item.subLink}}" class="underline">{{sub_item.subTitle}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="header__media header-sub">
+          <p>
+            <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m15.5.496-2.373 12.921s-.332.896-1.244.466L6.41 9.35l-.026-.013c.74-.717 6.474-6.287 6.725-6.54.388-.39.147-.623-.304-.328l-8.47 5.81-3.267-1.187s-.515-.197-.564-.627c-.05-.43.58-.663.58-.663L14.405.156s1.095-.52 1.095.34Z"
+                fill="#777" />
+            </svg>
+            <svg class="header-sub__icon" width="8" height="5" viewBox="0 0 8 5" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M.602.646a.533.533 0 0 1 .752-.044L4 2.953 6.646.602a.533.533 0 1 1 .708.797l-3 2.666a.533.533 0 0 1-.708 0l-3-2.666A.533.533 0 0 1 .602.646Z"
+                fill="#777" />
+            </svg>
+          </p>
+          <div class="header-sub__spoiler collapse">
+            <ul class="header-sub__list">
+              {% for item in from_json(generate_context_meta(meta.langue, 'header').headerMediaList) %}
+
+              <li>
+                <a href="{{item.link}}">
+                  <span>{{item.title}}</span>
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M.885 4.038V0h4.038v1H1.885v3.038h-1ZM.885 18v-4.038h1V17h3.038v1H.885Zm13.962 0v-1h3.038v-3.038h1V18h-4.038Zm3.038-13.962V1h-3.038V0h4.038v4.038h-1Zm-3.058 9.904h1.212v1.212h-1.212v-1.212Zm0-2.423h1.212v1.212h-1.212v-1.212Zm-1.211 1.212h1.21v1.211h-1.21v-1.211Zm-1.212 1.211h1.212v1.212h-1.212v-1.212Zm-1.211-1.211h1.21v1.211h-1.21v-1.211Zm2.423-2.423h1.21v1.211h-1.21v-1.211Zm-1.212 1.211h1.212v1.212h-1.212v-1.212Zm-1.211-1.211h1.21v1.211h-1.21v-1.211Zm4.846-7.462v4.846h-4.846V2.846h4.846Zm-7.462 7.462v4.846H3.73v-4.846h4.846Zm0-7.462v4.846H3.73V2.846h4.846ZM7.693 14.27v-3.077H4.615v3.077h3.078Zm0-7.461V3.73H4.615v3.077l3.078.002Zm7.46 0V3.73h-3.076v3.077l3.077.002Z"
+                      fill="#777" />
+                  </svg>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="header__search">
+          <input type="text" placeholder="Введите запрос" />
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.525.033A5.492 5.492 0 1 0 8.922 9.84l2.969 2.969a.65.65 0 1 0 .919-.92L9.84 8.923A5.492 5.492 0 0 0 5.525.032ZM1.268 5.525a4.258 4.258 0 1 1 8.515 0 4.258 4.258 0 0 1-8.515 0Z"
+                fill="#777" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,8 @@
+:langue: ch
+
+:Error500Number: 500
+:Error500Title: ОШИБКА СЕРВЕРА
+:Error500SubTitle: На сервере произошла непредвиденная ошибка. Пожалуйста, подождите, она скоро будет исправлена.
+:Error500MainPage: {"title": "Вернуться на главную", "link":"/ch/index.html"}
+
+.. title:: ANGIE Error 500
